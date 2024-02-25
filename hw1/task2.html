@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    .item:hover {
+      cursor: pointer;
+    }
+    .animation {
+        animation: vision 1s ease-in-out;
+      }
+      @keyframes vision {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+  </style>
+  <body>
+    <div id="task2">
+      <div>
+        <button @:click="btntext=btntext.split('').reverse().join('')">
+          {{btntext}}
+        </button>
+      </div>
+      <div>
+        <ul>
+          <li class="item animation" @:click="delItem">text1</li>
+          <li class="item animation" @:click="delItem">text2</li>
+          <li class="item animation" @:click="delItem">text3</li>
+        </ul>
+        <button @:click="addNewItem">Add</button>
+      </div>
+    </div>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="task2.js"></script>
+  </body>
+</html>

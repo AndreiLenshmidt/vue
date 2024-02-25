@@ -126,6 +126,7 @@ h4 {
   padding-top: 56px;
 }
 .projects__card-figure {
+  background: rgb(234, 234, 234);
   overflow: hidden;
   height: 525px;
   position: relative;

@@ -1,0 +1,94 @@
+.blog-wrap {
+  padding-top: 178px;
+  background: rgb(244, 240, 236) url(../hw1/img/blog.png) center center;
+  border: 1px solid rgb(244, 240, 236);
+}
+
+.blog {
+  text-align: center;
+  border-radius: 37px 37px 0px 0px;
+  background: rgb(255, 255, 255);
+  padding: 41px 78px;
+  &__headding {
+    color: rgb(41, 47, 54);
+    font-size: 50px;
+    font-weight: 400;
+    line-height: 125%;
+  }
+  &__text {
+    color: rgb(77, 80, 83);
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 150%;
+  }
+  &__text:last-child:before {
+    content: " / ";
+  }
+}
+
+.latest {
+  padding-top: 200px;
+  &__headding {
+    color: rgb(41, 47, 54);
+    font-size: 50px;
+    font-weight: 400;
+    line-height: 125%;
+    padding-bottom: 33px;
+  }
+  &__box:hover {
+    background-color: rgb(244, 240, 236);
+  }
+
+  &__box {
+    box-sizing: border-box;
+    padding: 22px;
+    border: 1px solid rgb(231, 231, 231);
+    border-radius: 62px;
+    box-shadow: 0px 10px 30px 0px rgba(255, 255, 255, 0.25);
+  }
+  &__img-box {
+    position: relative;
+    overflow: hidden;
+    width: 569px;
+    height: 478px;
+    border-radius: 50px;
+    background: rgb(196, 196, 196);
+  }
+  &__img {
+    position: absolute;
+    top: -16px;
+    left: -42px;
+  }
+  &__text-box {
+    width: 469px;
+  }
+  &__headding-name {
+    color: rgb(41, 47, 54);
+    font-size: 25px;
+    font-weight: 400;
+    line-height: 125%;
+    padding-top: 52px;
+    padding-bottom: 22px;
+  }
+  &__text-pos {
+    display: flex;
+    height: 198px;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-bottom: 41px;
+  }
+  &__text {
+    color: rgb(77, 80, 83);
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 150%;
+  }
+  &__data {
+    color: rgb(77, 80, 83);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 150%;
+    text-transform: capitalize;
+    align-self: center;
+  }
+}

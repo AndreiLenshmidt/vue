@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div class="wrapper">
+    <div class="wrapper" id="app">
       <div class="header-wrap">
         <div class="wrap">
           <header class="header flex">
@@ -240,78 +240,21 @@
               </p>
             </div>
             <div class="articles__box flex">
-              <article class="articles__card">
+              <article
+                v-for="article in articles.slice(0,3)"
+                :key="article.id"
+                class="articles__card"
+              >
                 <figure class="articles__img-box">
-                  <img class="articles__img" src="img/card-img1.png" alt="#" />
+                  <img class="articles__img" :src="article.image" alt="#" />
+                  <div class="articles__category">
+                    <p class="articles__category-text">{{article.category}}</p>
+                  </div>
                 </figure>
-                <h3 class="articles__card-headding">
-                  Let’s Get Solution For Building Construction Work
-                </h3>
-                <div class="articles__btn-box flex">
-                  <p class="articles__data">26 December,2022</p>
-                  <svg
-                    class="articles__btn"
-                    width="8.03"
-                    height="16"
-                    viewBox="0 0 7.94691 15.3795"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                    xmlns:xlink="http://www.w3.org/1999/xlink"
-                  >
-                    <desc>Created with Pixso.</desc>
-                    <defs />
-                    <path
-                      id="Vector"
-                      d="M1.00406 14.3755L6.94691 7.68977L1.00406 1.00406"
-                      stroke="#292F36"
-                      stroke-opacity="1.000000"
-                      stroke-width="2.000000"
-                      stroke-linejoin="round"
-                      stroke-linecap="round"
-                    />
-                  </svg>
-                </div>
-              </article>
-              <article class="articles__card">
-                <figure class="articles__img-box">
-                  <img class="articles__img" src="img/card-img2.png" alt="#" />
-                </figure>
-                <h3 class="articles__card-headding">
-                  Low Cost Latest Invented Interior Designing
-                  <br />Ideas.
-                </h3>
-                <div class="articles__btn-box flex">
-                  <p class="articles__data">26 December,2022</p>
-                  <svg
-                    class="articles__btn"
-                    width="8.03"
-                    height="16"
-                    viewBox="0 0 7.94691 15.3795"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                    xmlns:xlink="http://www.w3.org/1999/xlink"
-                  >
-                    <desc>Created with Pixso.</desc>
-                    <defs />
-                    <path
-                      id="Vector"
-                      d="M1.00406 14.3755L6.94691 7.68977L1.00406 1.00406"
-                      stroke="#292F36"
-                      stroke-opacity="1.000000"
-                      stroke-width="2.000000"
-                      stroke-linejoin="round"
-                      stroke-linecap="round"
-                    />
-                  </svg>
-                </div>
-              </article>
-              <article class="articles__card">
-                <figure class="articles__img-box">
-                  <img class="articles__img" src="img/card-img3.png" alt="#" />
-                </figure>
-                <h3 class="articles__card-headding">
-                  Best For Any Office & Business Interior Solution
-                </h3>
+                <h3
+                  class="articles__card-headding"
+                  v-html="article.headding"
+                ></h3>
                 <div class="articles__btn-box flex">
                   <p class="articles__data">26 December,2022</p>
                   <svg
@@ -408,5 +351,7 @@
         </div>
       </div>
     </div>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="main.js"></script>
   </body>
 </html>

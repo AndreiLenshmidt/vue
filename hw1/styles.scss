@@ -20,6 +20,13 @@ h4 {
   font-family: "DM Serif Display";
 }
 
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+}
+
 .wrap {
   width: 1200px;
   margin: 0 auto;
@@ -212,7 +219,27 @@ h4 {
 
 .articles {
   padding-top: 96px;
+  &__box {
+    padding-top: 30px;
+    flex-wrap: wrap;
+    row-gap: 30px;
+  }
 
+  &__category {
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+    padding: 8px 10px;
+    border-radius: 8px 8px 8px 0px;
+    background: rgb(255, 255, 255);
+  }
+  &__category-text {
+    color: rgb(77, 80, 83);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 150%;
+    text-transform: capitalize;
+  }
   &__text-box {
     width: 810px;
     text-align: center;
@@ -269,7 +296,7 @@ h4 {
     font-size: 25px;
     font-weight: 400;
     line-height: 125%;
-    width: 82%;
+    width: 84%;
   }
   &__btn-box {
     padding-bottom: 16px;
@@ -288,6 +315,10 @@ h4 {
     border-radius: 100%;
     padding: 18px 22px;
     transition: all 0.5s;
+  }
+  &__btn:hover {
+    cursor: pointer;
+    background-color: #fff;
   }
 }
 
@@ -334,3 +365,5 @@ h4 {
     padding-right: 54px;
   }
 }
+
+@import "blog";

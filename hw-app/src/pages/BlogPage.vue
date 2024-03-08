@@ -1,9 +1,5 @@
 <template>
-  <div class="header-wrap">
-    <div class="wrap">
-      <HeaderComp />
-    </div>
-  </div>
+  
   <div class="blog-wrap">
     <img class="blog-wrap__bkg" :src="blokBkg" alt="#" />
     <div class="wrap flex-center">
@@ -90,26 +86,18 @@
       </section>
     </div>
   </div>
-  <div class="footer-wrap">
-    <div class="wrap">
-      <FooterComp />
-    </div>
-  </div>
+  
 </template>
 
 <script>
 import ArrowBtn from "@/components/ArrowBtn.vue";
 import BradCramp from "@/components/BradCramp.vue";
-import FooterComp from "@/components/FooterComp.vue";
-import HeaderComp from "@/components/HeaderComp.vue";
 import SecondCard from "@/components/SecondCard.vue";
 import SecondTitle from "@/components/SecondTitle.vue";
 import TextComp from "@/components/TextComp.vue";
 
 export default {
   components: {
-    HeaderComp,
-    FooterComp,
     SecondTitle,
     BradCramp,
     TextComp,
@@ -410,10 +398,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.wrap {
-  width: 1200px;
-  margin: 0 auto;
-}
+
 .flex-center {
   display: flex;
   justify-content: center;
@@ -564,10 +549,5 @@ export default {
     transform: rotate(180deg);
   }
 }
-.footer {
-  display: flex;
-  justify-content: space-between;
-  padding-top: 96px;
-  padding-bottom: 134px;
-}
+
 </style>

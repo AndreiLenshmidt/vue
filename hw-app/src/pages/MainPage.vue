@@ -1,9 +1,5 @@
 <template class="wrapper">
-  <div class="header-wrap">
-    <div class="wrap">
-      <HeaderComp />
-    </div>
-  </div>
+  
   <div class="main-wrap">
     <div class="wrap">
       <MainSection class="main" />
@@ -65,31 +61,23 @@
       </section>
     </div>
   </div>
-  <div class="footer-wrap">
-    <div class="wrap">
-      <FooterComp/>
-    </div>
-  </div>
+
 </template>
 
 <script>
 import SecondTitle from "@/components/SecondTitle.vue";
-import HeaderComp from "../components/HeaderComp.vue";
 import MainSection from "../components/MainSection.vue";
-import FooterComp from "../components/FooterComp.vue";
 import FirstCard from "../components/FirstCard.vue";
 import SecondCard from "../components/SecondCard.vue";
 import TextComp from "@/components/TextComp.vue";
 
 export default {
   components: {
-    HeaderComp,
     MainSection,
     SecondTitle,
     TextComp,
     FirstCard,
     SecondCard,
-    FooterComp
   },
   data() {
     return {
@@ -148,10 +136,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.wrap {
-  width: 1200px;
-  margin: 0 auto;
-}
+
 .main {
   height: 758px;
   border-radius: 70px;
@@ -235,12 +220,6 @@ export default {
     font-weight: 400;
     line-height: 150%;
   }
-}
-.footer {
-  display: flex;
-  justify-content: space-between;
-  padding-top: 96px;
-  padding-bottom: 134px;
 }
 
 </style>

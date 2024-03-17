@@ -1,5 +1,4 @@
 <template class="wrapper">
-  
   <div class="main-wrap">
     <div class="wrap">
       <MainSection class="main" />
@@ -17,51 +16,54 @@
           >
         </div>
         <div class="projects__box">
-          <FirstCard />
+          <FirstCard
+            v-for="(card, index) in firstCards"
+            :key="index"
+            :card="card"
+          />
         </div>
       </section>
     </div>
   </div>
   <div class="proginfo-wrap">
-        <div class="wrap">
-          <section class="proginfo flex">
-            <div class="proginfo__box">
-              <h2 class="proginfo__headding">12</h2>
-              <TextComp class="proginfo__text">Years Of Experiance</TextComp>
-            </div>
-            <div class="proginfo__box">
-              <h2 class="proginfo__headding">85</h2>
-              <TextComp class="proginfo__text">Success Project</TextComp>
-            </div>
-            <div class="proginfo__box">
-              <h2 class="proginfo__headding">15</h2>
-              <TextComp class="proginfo__text">Active Project</TextComp>
-            </div>
-            <div class="proginfo__box">
-              <h2 class="proginfo__headding">95</h2>
-              <TextComp class="proginfo__text">Happy CUstomers</TextComp>
-            </div>
-          </section>
+    <div class="wrap">
+      <section class="proginfo flex">
+        <div class="proginfo__box">
+          <h2 class="proginfo__headding">12</h2>
+          <TextComp class="proginfo__text">Years Of Experiance</TextComp>
         </div>
+        <div class="proginfo__box">
+          <h2 class="proginfo__headding">85</h2>
+          <TextComp class="proginfo__text">Success Project</TextComp>
+        </div>
+        <div class="proginfo__box">
+          <h2 class="proginfo__headding">15</h2>
+          <TextComp class="proginfo__text">Active Project</TextComp>
+        </div>
+        <div class="proginfo__box">
+          <h2 class="proginfo__headding">95</h2>
+          <TextComp class="proginfo__text">Happy CUstomers</TextComp>
+        </div>
+      </section>
+    </div>
   </div>
   <div class="articles-wrap">
     <div class="wrap">
       <section class="articles">
         <div class="articles__text-box">
-              <h2 class="articles__headding">Articles & News</h2>
-              <p class="articles__text">
-                It is a long established fact that a reader will be distracted
-                by the of readable content of a page when lookings at its
-                layouts the points of using.
-              </p>
+          <h2 class="articles__headding">Articles & News</h2>
+          <p class="articles__text">
+            It is a long established fact that a reader will be distracted by
+            the of readable content of a page when lookings at its layouts the
+            points of using.
+          </p>
         </div>
         <div class="articles__box">
-          <SecondCard :button="button" :articles="articles.slice(0, 3)"/>
+          <SecondCard :button="button" :articles="articles.slice(0, 3)" />
         </div>
       </section>
     </div>
   </div>
-
 </template>
 
 <script>
@@ -130,13 +132,46 @@ export default {
           link: "#",
         },
       ],
-    }
+      firstCards: [
+        {
+          imgsrc: require("@/assets/img/card1.png"),
+          link: "#",
+          imgalt: "Modern Kitchan",
+          title: "Modern Kitchan",
+          info: "Decor / Artchitecture",
+          class: "btrr",
+        },
+        {
+          imgsrc: require("@/assets/img/card2.png"),
+          link: "#",
+          imgalt: "Modern Kitchan",
+          title: "Modern Kitchan",
+          info: "Decor / Artchitecture",
+          class: "btlr",
+        },
+        {
+          imgsrc: require("@/assets/img/card3.png"),
+          link: "#",
+          imgalt: "Modern Kitchan",
+          title: "Modern Kitchan",
+          info: "Decor / Artchitecture",
+          class: "bbrr",
+        },
+        {
+          imgsrc: require("@/assets/img/card4.png"),
+          link: "#",
+          imgalt: "Modern Kitchan",
+          title: "Modern Kitchan",
+          info: "Decor / Artchitecture",
+          class: "bblr",
+        },
+      ],
+    };
   },
 };
 </script>
 
 <style lang="scss" scoped>
-
 .main {
   height: 758px;
   border-radius: 70px;
@@ -157,6 +192,18 @@ export default {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+  }
+  &__card:nth-child(3),
+  &__card:nth-child(4) {
+    padding-top: 56px;
+  }
+  &__card-figure {
+    height: 525px;
+  }
+  &__card-img {
+    position: absolute;
+    top: -50%;
+    left: -15%;
   }
 }
 .proginfo-wrap {
@@ -221,5 +268,4 @@ export default {
     line-height: 150%;
   }
 }
-
 </style>

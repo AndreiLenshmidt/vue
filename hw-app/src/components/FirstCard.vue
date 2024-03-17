@@ -1,11 +1,11 @@
 <template>
-  <article v-for="(card, index) in cards" :key="index" class="projects__card">
+  <article class="projects__card">
     <figure class="projects__card-figure" :class="card.class">
       <img class="projects__card-img" :src="card.imgsrc" :alt="imgalt" />
     </figure>
     <div class="projects__text-card">
       <div>
-        <h4 class="projects__card-headding">{{ card.title }}</h4>
+        <h4 class="projects__card-headding" v-html="card.title"></h4>
         <TextComp>{{ card.info }}</TextComp>
       </div>
       <ArrowBtn
@@ -24,6 +24,9 @@ import ArrowBtn from "./ArrowBtn.vue";
 
 export default {
   components: { TextComp, ArrowBtn },
+  props: {
+    card: Object,
+  },
   data() {
     return {
       button: {
@@ -31,40 +34,40 @@ export default {
         width: 10.02,
         class: "projects__btn",
       },
-      cards: [
-        {
-          imgsrc: require("@/assets/img/card1.png"),
-          link: "#",
-          imgalt: "Modern Kitchan",
-          title: "Modern Kitchan",
-          info: "Decor / Artchitecture",
-          class: "btrr",
-        },
-        {
-          imgsrc: require("@/assets/img/card2.png"),
-          link: "#",
-          imgalt: "Modern Kitchan",
-          title: "Modern Kitchan",
-          info: "Decor / Artchitecture",
-          class: "btlr",
-        },
-        {
-          imgsrc: require("@/assets/img/card3.png"),
-          link: "#",
-          imgalt: "Modern Kitchan",
-          title: "Modern Kitchan",
-          info: "Decor / Artchitecture",
-          class: "bbrr",
-        },
-        {
-          imgsrc: require("@/assets/img/card4.png"),
-          link: "#",
-          imgalt: "Modern Kitchan",
-          title: "Modern Kitchan",
-          info: "Decor / Artchitecture",
-          class: "bblr",
-        },
-      ],
+      // cards: [
+      //   {
+      //     imgsrc: require("@/assets/img/card1.png"),
+      //     link: "#",
+      //     imgalt: "Modern Kitchan",
+      //     title: "Modern Kitchan",
+      //     info: "Decor / Artchitecture",
+      //     class: "btrr",
+      //   },
+      //   {
+      //     imgsrc: require("@/assets/img/card2.png"),
+      //     link: "#",
+      //     imgalt: "Modern Kitchan",
+      //     title: "Modern Kitchan",
+      //     info: "Decor / Artchitecture",
+      //     class: "btlr",
+      //   },
+      //   {
+      //     imgsrc: require("@/assets/img/card3.png"),
+      //     link: "#",
+      //     imgalt: "Modern Kitchan",
+      //     title: "Modern Kitchan",
+      //     info: "Decor / Artchitecture",
+      //     class: "bbrr",
+      //   },
+      //   {
+      //     imgsrc: require("@/assets/img/card4.png"),
+      //     link: "#",
+      //     imgalt: "Modern Kitchan",
+      //     title: "Modern Kitchan",
+      //     info: "Decor / Artchitecture",
+      //     class: "bblr",
+      //   },
+      // ],
     };
   },
 };
@@ -74,22 +77,6 @@ export default {
 .projects {
   &__card {
     width: 45.8%;
-  }
-
-  &__card:nth-child(3),
-  &__card:nth-child(4) {
-    padding-top: 56px;
-  }
-  &__card-figure {
-    background: rgb(234, 234, 234);
-    overflow: hidden;
-    height: 525px;
-    position: relative;
-  }
-  &__card-img {
-    position: absolute;
-    top: -50%;
-    left: -15%;
   }
   .btrr {
     border-top-right-radius: 80px;
@@ -115,6 +102,15 @@ export default {
     font-size: 25px;
     font-weight: 400;
     line-height: 125%;
+  }
+  &__card-figure {
+    background: rgb(234, 234, 234);
+    overflow: hidden;
+    position: relative;
+  }
+  &__card-img {
+    width: 100%;
+    margin-bottom: -5px;
   }
   &__info {
     padding-top: 5px;

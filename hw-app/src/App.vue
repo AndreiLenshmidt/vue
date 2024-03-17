@@ -6,14 +6,15 @@
   </div>
   <!-- <MainPage /> -->
   <!-- <BlogPage /> -->
-  <div class="wrap">
+  <!-- <div class="wrap">
     <ProductDetails
       :product="product"
       :availableProduct="availableProduct"
       :formattedPrice="formattedPrice"
     />
-  </div>
+  </div> -->
   <!-- <DetailsPage /> -->
+  <ProjectsPage />
   <div class="footer-wrap">
     <div class="wrap">
       <FooterComp />
@@ -28,6 +29,7 @@ import BlogPage from "./pages/BlogPage.vue";
 import DetailsPage from "./pages/DetailsPage.vue";
 import MainPage from "./pages/MainPage.vue";
 import ProductDetails from "./components/ProductDetails.vue";
+import ProjectsPage from "./pages/ProjectsPage.vue";
 
 export default {
   name: "App",
@@ -38,6 +40,7 @@ export default {
     HeaderComp,
     FooterComp,
     ProductDetails,
+    ProjectsPage,
   },
   data() {
     return {

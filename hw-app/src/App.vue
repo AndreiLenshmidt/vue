@@ -14,7 +14,8 @@
     />
   </div> -->
   <!-- <DetailsPage /> -->
-  <ProjectsPage />
+  <!-- <ProjectsPage /> -->
+  <router-view></router-view>
   <div class="footer-wrap">
     <div class="wrap">
       <FooterComp />
@@ -30,6 +31,7 @@ import DetailsPage from "./pages/DetailsPage.vue";
 import MainPage from "./pages/MainPage.vue";
 import ProductDetails from "./components/ProductDetails.vue";
 import ProjectsPage from "./pages/ProjectsPage.vue";
+import ProjectDetailsPage from "./pages/ProjectDetailsPage.vue";
 
 export default {
   name: "App",
@@ -41,6 +43,7 @@ export default {
     FooterComp,
     ProductDetails,
     ProjectsPage,
+    ProjectDetailsPage,
   },
   data() {
     return {
@@ -96,6 +99,17 @@ h4 {
 .wrap {
   width: 1200px;
   margin: 0 auto;
+}
+.projects {
+  &__card-figure {
+    background: rgb(234, 234, 234);
+    overflow: hidden;
+    position: relative;
+  }
+  &__card-img {
+    width: 100%;
+    margin-bottom: -5px;
+  }
 }
 .footer {
   display: flex;

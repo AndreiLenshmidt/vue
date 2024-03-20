@@ -1,5 +1,5 @@
 <template>
-    <a :href="btnlink" :class="btnclass">
+    <div :class="btnclass">
         <svg
           :width="btnwidth"
           :height="btnheight"
@@ -20,7 +20,7 @@
             stroke-linecap="round"
           />
         </svg>
-    </a>
+    </div>
 </template>
 
 <script>

@@ -39,6 +39,7 @@ import BradCramp from "@/components/BradCramp.vue";
 import FilterArticles from "@/components/FilterArticles.vue";
 import FirstCard from "@/components/FirstCard.vue";
 import SecondTitle from "@/components/SecondTitle.vue";
+import { mapState } from "vuex";
 
 export default {
   components: {
@@ -50,299 +51,10 @@ export default {
   data() {
     return {
       navItems: [
-        { link: "#", content: "Home" },
-        { link: "#", content: "Projects" },
+        { link: "/", content: "Home" },
+        { link: "/project", content: "Projects" },
       ],
       filters: ["Bathroom", "Bed Room", "Kitchan", "Living Area"],
-      projectCards: [
-        {
-          id: 31,
-          imgsrc: require("@/assets/img/card1.png"),
-          link: "#",
-          imgalt: "Modern Kitchan",
-          title: "Modern Kitchan",
-          info: "Decor / Artchitecture",
-          category: "Kitchan",
-          class: "",
-        },
-        {
-          id: 32,
-          imgsrc: require("@/assets/img/card2.png"),
-          link: "#",
-          imgalt: "Modern Kitchan",
-          title: "Modern Kitchan",
-          info: "Decor / Artchitecture",
-          category: "Kitchan",
-          class: "",
-        },
-        {
-          id: 33,
-          imgsrc: require("@/assets/img/card3.png"),
-          link: "#",
-          imgalt: "Modern Kitchan",
-          title: "Modern Kitchan",
-          info: "Decor / Artchitecture",
-          category: "Kitchan",
-          class: "",
-        },
-        {
-          id: 34,
-          imgsrc: require("@/assets/img/card4.png"),
-          link: "#",
-          imgalt: "Modern Kitchan",
-          title: "Modern Kitchan",
-          info: "Decor / Artchitecture",
-          category: "Kitchan",
-          class: "",
-        },
-        {
-          id: 0,
-          imgsrc: require("@/assets/img/card-img1.png"),
-          title: "Let’s Get Solution For Building Construction Work",
-          category: "Kitchan",
-          link: "#",
-        },
-        {
-          id: 1,
-          imgsrc: require("@/assets/img/card-img2.png"),
-          title: "Low Cost Latest Invented Interior Designing <br> Ideas.",
-          category: "Living Area",
-          info: "Decor / Artchitecture",
-          link: "#",
-        },
-        {
-          id: 2,
-          imgsrc: require("@/assets/img/card-img3.png"),
-          title: "Best For Any Office & Business Interior Solution",
-          category: "Living Area",
-          info: "Decor / Artchitecture",
-          link: "#",
-        },
-        {
-          id: 3,
-          imgsrc: require("@/assets/img/card-img4.png"),
-          title: "Let’s Get Solution For Building Construction Work",
-          category: "Living Area",
-          info: "Decor / Artchitecture",
-          link: "#",
-        },
-        {
-          id: 4,
-          imgsrc: require("@/assets/img/card-img5.png"),
-          title: "Low Cost Latest Invented Interior Designing <br>Ideas.",
-          category: "Living Area",
-          info: "Decor / Artchitecture",
-          link: "#",
-        },
-        {
-          id: 5,
-          imgsrc: require("@/assets/img/card-img6.png"),
-          title: "Best For Any Office & Business Interior Solution",
-          category: "Living Area",
-          info: "Decor / Artchitecture",
-          link: "#",
-        },
-        {
-          id: 6,
-          imgsrc: require("@/assets/img/card-img6.png"),
-          title: "Best For Any Office & Business Interior Solution",
-          category: "Living Area",
-          info: "Decor / Artchitecture",
-          link: "#",
-        },
-        {
-          id: 7,
-          imgsrc: require("@/assets/img/card-img6.png"),
-          title: "Best For Any Office & Business Interior Solution",
-          category: "Living Area",
-          info: "Decor / Artchitecture",
-          link: "#",
-        },
-        {
-          id: 8,
-          imgsrc: require("@/assets/img/card-img6.png"),
-          title: "Best For Any Office & Business Interior Solution",
-          category: "Living Area",
-          info: "Decor / Artchitecture",
-          link: "#",
-        },
-        {
-          id: 9,
-          imgsrc: require("@/assets/img/card-img6.png"),
-          title: "Best For Any Office & Business Interior Solution",
-          category: "Living Area",
-          info: "Decor / Artchitecture",
-          link: "#",
-        },
-        {
-          id: 10,
-          imgsrc: require("@/assets/img/card-img6.png"),
-          title: "Best For Any Office & Business Interior Solution",
-          category: "Living Area",
-          info: "Decor / Artchitecture",
-          link: "#",
-        },
-        {
-          id: 11,
-          imgsrc: require("@/assets/img/card-img5.png"),
-          title: "Best For Any Office & Business Interior Solution",
-          category: "Living Area",
-          info: "Decor / Artchitecture",
-          link: "#",
-        },
-        {
-          id: 12,
-          imgsrc: require("@/assets/img/card5.png"),
-          title: "Low Cost Latest Invented Interior Designing <br>Ideas.",
-          category: "Bathroom",
-          info: "Decor / Artchitecture",
-          link: "#",
-        },
-        {
-          id: 13,
-          imgsrc: require("@/assets/img/card6.png"),
-          title: "Low Cost Latest Invented Interior Designing <br>Ideas.",
-          category: "Bathroom",
-          info: "Decor / Artchitecture",
-          link: "#",
-        },
-        {
-          id: 14,
-          imgsrc: require("@/assets/img/card7.png"),
-          title: "Low Cost Latest Invented Interior Designing <br>Ideas.",
-          category: "Bathroom",
-          info: "Decor / Artchitecture",
-          link: "#",
-        },
-        {
-          id: 15,
-          imgsrc: require("@/assets/img/card8.png"),
-          title: "Low Cost Latest Invented Interior Designing <br>Ideas.",
-          category: "Bathroom",
-          info: "Decor / Artchitecture",
-          link: "#",
-        },
-        {
-          id: 16,
-          imgsrc: require("@/assets/img/card9.png"),
-          title: "Low Cost Latest Invented Interior Designing <br>Ideas.",
-          category: "Bathroom",
-          info: "Decor / Artchitecture",
-          link: "#",
-        },
-        {
-          id: 17,
-          imgsrc: require("@/assets/img/card10.png"),
-          title: "Low Cost Latest Invented Interior Designing <br>Ideas.",
-          category: "Bathroom",
-          info: "Decor / Artchitecture",
-          link: "#",
-        },
-        {
-          id: 18,
-          imgsrc: require("@/assets/img/card11.png"),
-          title: "Let’s Get Solution For Building Construction Work",
-          category: "Bed Room",
-          info: "Decor / Artchitecture",
-          link: "#",
-        },
-        {
-          id: 19,
-          imgsrc: require("@/assets/img/card12.png"),
-          title: "Let’s Get Solution For Building Construction Work",
-          category: "Bed Room",
-          info: "Decor / Artchitecture",
-          link: "#",
-        },
-        {
-          id: 20,
-          imgsrc: require("@/assets/img/card1.png"),
-          title: "Let’s Get Solution For Building Construction Work",
-          category: "Bed Room",
-          info: "Decor / Artchitecture",
-          link: "#",
-        },
-        {
-          id: 21,
-          imgsrc: require("@/assets/img/card2.png"),
-          title: "Let’s Get Solution For Building Construction Work",
-          category: "Bed Room",
-          info: "Decor / Artchitecture",
-          link: "#",
-        },
-        {
-          id: 22,
-          imgsrc: require("@/assets/img/card3.png"),
-          title: "Let’s Get Solution For Building Construction Work",
-          category: "Bed Room",
-          info: "Decor / Artchitecture",
-          link: "#",
-        },
-        {
-          id: 23,
-          imgsrc: require("@/assets/img/card6.png"),
-          title: "Let’s Get Solution For Building Construction Work",
-          category: "Bed Room",
-          info: "Decor / Artchitecture",
-          link: "#",
-        },
-        {
-          id: 24,
-          imgsrc: require("@/assets/img/card-img2.png"),
-          title: "Low Cost Latest Invented Interior Designing <br> Ideas.",
-          category: "Bed Room",
-          info: "Decor / Artchitecture",
-          link: "#",
-        },
-        {
-          id: 25,
-          imgsrc: require("@/assets/img/card8.png"),
-          title: "Low Cost Latest Invented Interior Designing <br> Ideas.",
-          category: "Bed Room",
-          info: "Decor / Artchitecture",
-          link: "#",
-        },
-        {
-          id: 26,
-          imgsrc: require("@/assets/img/card9.png"),
-          title: "Low Cost Latest Invented Interior Designing <br> Ideas.",
-          category: "Bed Room",
-          info: "Decor / Artchitecture",
-          link: "#",
-        },
-        {
-          id: 27,
-          imgsrc: require("@/assets/img/card10.png"),
-          title: "Low Cost Latest Invented Interior Designing <br> Ideas.",
-          category: "Bed Room",
-          info: "Decor / Artchitecture",
-          link: "#",
-        },
-        {
-          id: 28,
-          imgsrc: require("@/assets/img/card-img2.png"),
-          title: "Low Cost Latest Invented Interior Designing <br> Ideas.",
-          category: "Kitchan",
-          info: "Decor / Artchitecture",
-          link: "#",
-        },
-        {
-          id: 29,
-          imgsrc: require("@/assets/img/card-img2.png"),
-          title: "Low Cost Latest Invented Interior Designing <br> Ideas.",
-          category: "Kitchan",
-          info: "Decor / Artchitecture",
-          link: "#",
-        },
-        {
-          id: 30,
-          imgsrc: require("@/assets/img/card-img2.png"),
-          title: "Low Cost Latest Invented Interior Designing <br> Ideas.",
-          category: "Kitchan",
-          info: "Decor / Artchitecture",
-          link: "#",
-        },
-      ],
       activeFilter: "Kitchan",
     };
   },
@@ -352,6 +64,9 @@ export default {
     },
   },
   computed: {
+    ...mapState({
+      projectCards: state => state.projectCards,
+    }),
     filteredCards() {
       return this.projectCards.filter(
         (card) => card.category === this.activeFilter
@@ -381,6 +96,7 @@ export default {
     z-index: -1;
   }
 }
+
 .projects {
   text-align: center;
   border-radius: 37px 37px 0px 0px;
@@ -419,21 +135,6 @@ export default {
     padding-top: 0;
     padding-bottom: 56px;
     width: 98.82%;
-  }
-  &__card-figure {
-    background: rgb(234, 234, 234);
-    overflow: hidden;
-    // height: 525px;
-    object-fit: cover;
-    position: relative;
-  }
-  &__card-img {
-    // position: absolute;
-    // top: -50%;
-    // left: -15%;
-    width: 100%;
-    height: 100%;
-    // margin-bottom: -5px;
   }
 }
 .blog-articles {

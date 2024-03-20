@@ -8,12 +8,13 @@
         <h4 class="projects__card-headding" v-html="card.title"></h4>
         <TextComp>{{ card.info }}</TextComp>
       </div>
-      <ArrowBtn
-        :btnlink="card.link"
-        :btnclass="button.class"
-        :btnwidth="button.width"
-        :btnheight="button.height"
-      ></ArrowBtn>
+      <router-link to="/project/details">
+        <ArrowBtn
+          :btnclass="button.class"
+          :btnwidth="button.width"
+          :btnheight="button.height"
+        ></ArrowBtn>
+      </router-link>
     </div>
   </article>
 </template>
@@ -74,6 +75,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.main-figure {
+    height: 525px;
+}
 .projects {
   &__card {
     width: 45.8%;
@@ -102,15 +106,6 @@ export default {
     font-size: 25px;
     font-weight: 400;
     line-height: 125%;
-  }
-  &__card-figure {
-    background: rgb(234, 234, 234);
-    overflow: hidden;
-    position: relative;
-  }
-  &__card-img {
-    width: 100%;
-    margin-bottom: -5px;
   }
   &__info {
     padding-top: 5px;

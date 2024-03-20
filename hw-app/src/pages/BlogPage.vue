@@ -35,12 +35,13 @@
             </div>
             <div class="latest__data-box">
               <p class="latest__data">{{ latestArticle.data }}</p>
-              <ArrowBtn
-                :btnlink="latestArticle.link"
-                btnclass="latest__btn"
-                :btnwidth="button.width"
-                :btnheight="button.height"
-              ></ArrowBtn>
+              <router-link to="/blog/derails">
+                <ArrowBtn
+                  btnclass="latest__btn"
+                  btnwidth="8.03"
+                  btnheight="16"
+                ></ArrowBtn>
+              </router-link>
             </div>
           </div>
         </div>
@@ -95,6 +96,7 @@ import BradCramp from "@/components/BradCramp.vue";
 import SecondCard from "@/components/SecondCard.vue";
 import SecondTitle from "@/components/SecondTitle.vue";
 import TextComp from "@/components/TextComp.vue";
+import { mapState } from "vuex";
 
 export default {
   components: {
@@ -107,8 +109,8 @@ export default {
   data() {
     return {
       navItems: [
-        { link: "", content: "Home" },
-        { link: "", content: "Blog" },
+        { link: "/", content: "Home" },
+        { link: "/blog", content: "Blog" },
       ],
       blokBkg: require("@/assets/img/blog.png"),
       latestArticle: {
@@ -127,225 +129,6 @@ export default {
         width: 8.03,
         class: "latest__btn",
       },
-      articles: [
-        {
-          id: 0,
-          imgsrc: require("@/assets/img/card-img1.png"),
-          title: "Let’s Get Solution For Building Construction Work",
-          category: "Kitchan Design",
-          link: "#",
-        },
-        {
-          id: 1,
-          imgsrc: require("@/assets/img/card-img2.png"),
-          title: "Low Cost Latest Invented Interior Designing <br> Ideas.",
-          category: "Interior Design",
-          link: "#",
-        },
-        {
-          id: 2,
-          imgsrc: require("@/assets/img/card-img3.png"),
-          title: "Best For Any Office & Business Interior Solution",
-          category: "Living Design",
-          link: "#",
-        },
-        {
-          id: 3,
-          imgsrc: require("@/assets/img/card-img4.png"),
-          title: "Let’s Get Solution For Building Construction Work",
-          category: "Kitchan Design",
-          link: "#",
-        },
-        {
-          id: 4,
-          imgsrc: require("@/assets/img/card-img5.png"),
-          title: "Low Cost Latest Invented Interior Designing <br>Ideas.",
-          category: "Interior Design",
-          link: "#",
-        },
-        {
-          id: 5,
-          imgsrc: require("@/assets/img/card-img6.png"),
-          title: "Best For Any Office & Business Interior Solution",
-          category: "Living Design",
-          link: "#",
-        },
-        {
-          id: 6,
-          imgsrc: require("@/assets/img/card-img6.png"),
-          title: "Best For Any Office & Business Interior Solution",
-          category: "Living Design",
-          link: "#",
-        },
-        {
-          id: 7,
-          imgsrc: require("@/assets/img/card-img6.png"),
-          title: "Best For Any Office & Business Interior Solution",
-          category: "Living Design",
-          link: "#",
-        },
-        {
-          id: 8,
-          imgsrc: require("@/assets/img/card-img6.png"),
-          title: "Best For Any Office & Business Interior Solution",
-          category: "Living Design",
-          link: "#",
-        },
-        {
-          id: 9,
-          imgsrc: require("@/assets/img/card-img6.png"),
-          title: "Best For Any Office & Business Interior Solution",
-          category: "Living Design",
-          link: "#",
-        },
-        {
-          id: 10,
-          imgsrc: require("@/assets/img/card-img6.png"),
-          title: "Best For Any Office & Business Interior Solution",
-          category: "Living Design",
-          link: "#",
-        },
-        {
-          id: 11,
-          imgsrc: require("@/assets/img/card-img6.png"),
-          title: "Best For Any Office & Business Interior Solution",
-          category: "Living Design",
-          link: "#",
-        },
-        {
-          id: 12,
-          imgsrc: require("@/assets/img/card-img5.png"),
-          title: "Low Cost Latest Invented Interior Designing <br>Ideas.",
-          category: "Interior Design",
-          link: "#",
-        },
-        {
-          id: 13,
-          imgsrc: require("@/assets/img/card-img5.png"),
-          title: "Low Cost Latest Invented Interior Designing <br>Ideas.",
-          category: "Interior Design",
-          link: "#",
-        },
-        {
-          id: 14,
-          imgsrc: require("@/assets/img/card-img5.png"),
-          title: "Low Cost Latest Invented Interior Designing <br>Ideas.",
-          category: "Interior Design",
-          link: "#",
-        },
-        {
-          id: 15,
-          imgsrc: require("@/assets/img/card-img5.png"),
-          title: "Low Cost Latest Invented Interior Designing <br>Ideas.",
-          category: "Interior Design",
-          link: "#",
-        },
-        {
-          id: 16,
-          imgsrc: require("@/assets/img/card-img5.png"),
-          title: "Low Cost Latest Invented Interior Designing <br>Ideas.",
-          category: "Interior Design",
-          link: "#",
-        },
-        {
-          id: 17,
-          imgsrc: require("@/assets/img/card-img5.png"),
-          title: "Low Cost Latest Invented Interior Designing <br>Ideas.",
-          category: "Interior Design",
-          link: "#",
-        },
-        {
-          id: 18,
-          imgsrc: require("@/assets/img/card-img1.png"),
-          title: "Let’s Get Solution For Building Construction Work",
-          category: "Kitchan Design",
-          link: "#",
-        },
-        {
-          id: 19,
-          imgsrc: require("@/assets/img/card-img1.png"),
-          title: "Let’s Get Solution For Building Construction Work",
-          category: "Kitchan Design",
-          link: "#",
-        },
-        {
-          id: 20,
-          imgsrc: require("@/assets/img/card-img1.png"),
-          title: "Let’s Get Solution For Building Construction Work",
-          category: "Kitchan Design",
-          link: "#",
-        },
-        {
-          id: 21,
-          imgsrc: require("@/assets/img/card-img1.png"),
-          title: "Let’s Get Solution For Building Construction Work",
-          category: "Kitchan Design",
-          link: "#",
-        },
-        {
-          id: 22,
-          imgsrc: require("@/assets/img/card-img1.png"),
-          title: "Let’s Get Solution For Building Construction Work",
-          category: "Kitchan Design",
-          link: "#",
-        },
-        {
-          id: 23,
-          imgsrc: require("@/assets/img/card-img1.png"),
-          title: "Let’s Get Solution For Building Construction Work",
-          category: "Kitchan Design",
-          link: "#",
-        },
-        {
-          id: 24,
-          imgsrc: require("@/assets/img/card-img2.png"),
-          title: "Low Cost Latest Invented Interior Designing <br> Ideas.",
-          category: "Interior Design",
-          link: "#",
-        },
-        {
-          id: 25,
-          imgsrc: require("@/assets/img/card-img2.png"),
-          title: "Low Cost Latest Invented Interior Designing <br> Ideas.",
-          category: "Interior Design",
-          link: "#",
-        },
-        {
-          id: 26,
-          imgsrc: require("@/assets/img/card-img2.png"),
-          title: "Low Cost Latest Invented Interior Designing <br> Ideas.",
-          category: "Interior Design",
-          link: "#",
-        },
-        {
-          id: 27,
-          imgsrc: require("@/assets/img/card-img2.png"),
-          title: "Low Cost Latest Invented Interior Designing <br> Ideas.",
-          category: "Interior Design",
-          link: "#",
-        },
-        {
-          id: 28,
-          imgsrc: require("@/assets/img/card-img2.png"),
-          title: "Low Cost Latest Invented Interior Designing <br> Ideas.",
-          category: "Interior Design",
-          link: "#",
-        },
-        {
-          id: 29,
-          imgsrc: require("@/assets/img/card-img2.png"),
-          title: "Low Cost Latest Invented Interior Designing <br> Ideas.",
-          category: "Interior Design",
-          link: "#",
-          },
-          {
-          id: 30,
-          imgsrc: require("@/assets/img/card-img2.png"),
-          title: "Low Cost Latest Invented Interior Designing <br> Ideas.",
-          category: "Interior Design",
-          link: "#",
-        },
-      ],
       visionCard: {
         start: 0,
         end: 6,
@@ -357,6 +140,9 @@ export default {
     };
   },
   computed: {
+    ...mapState({
+      articles: state=>state.articles,
+    }),
     paginationbtns() {
       const max = Math.ceil(this.articles.length / 6);
       const buttons = [];

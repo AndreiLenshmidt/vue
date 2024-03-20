@@ -1,9 +1,5 @@
 <template>
-  <article
-    v-for="article in articles"
-    :key="article.id"
-    class="articles__card"
-  >
+  <article v-for="article in articles" :key="article.id" class="articles__card">
     <figure class="articles__img-box">
       <img class="articles__img" :src="article.imgsrc" alt="#" />
       <div class="articles__category">
@@ -13,12 +9,13 @@
     <h3 class="articles__card-headding" v-html="article.title"></h3>
     <div class="articles__btn-box">
       <p class="articles__data">26 December,2022</p>
-      <ArrowBtn
-        :btnlink="article.link"
-        btnclass="articles__btn"
-        :btnwidth="button.width"
-        :btnheight="button.height"
-      ></ArrowBtn>
+      <router-link to="/blog/derails">
+        <ArrowBtn
+          btnclass="articles__btn"
+          :btnwidth="button.width"
+          :btnheight="button.height"
+        ></ArrowBtn>
+      </router-link>
     </div>
   </article>
 </template>

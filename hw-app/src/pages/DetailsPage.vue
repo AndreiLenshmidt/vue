@@ -1,5 +1,4 @@
 <template>
-  
   <div class="details-wrap">
     <img class="details-wrap__bkg" :src="detailsBkg" alt="#" />
   </div>
@@ -87,13 +86,13 @@
       </section>
     </div>
   </div>
-
 </template>
 
 <script>
 import FilterArticles from "@/components/FilterArticles.vue";
 import SecondTitle from "@/components/SecondTitle.vue";
 import TextComp from "@/components/TextComp.vue";
+import { mapState } from "vuex";
 
 export default {
   components: { FilterArticles, SecondTitle, TextComp },
@@ -114,188 +113,27 @@ export default {
         { content: "Home", link: "#" },
         { content: "Blog", link: "#" },
       ],
-      articles: [
-        {
-          category: "Kitchen",
-          firstImgsrc: require("@/assets/img/article-photo1.png"),
-          firstImgAlt: "firstImg",
-          title1: "Let’s Get Solution for Building Construction Work",
-          content1:
-            "Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpmaximus.posuere in.Contrary to popular belief.There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injecthumour, or randomised words which don't look even slightly believable.",
-          content2:
-            " Embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary.",
-          blockquote: "The details are not the details. They make the design.",
-          title2: "Design sprints are great",
-          content3:
-            "Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpmaximus.posuere in.Contrary to popular belief.There are many variations of passages of Lorem Ipsum available, but the majority have suffered.",
-          list: [
-            "Contrary to popular belief.There are many variations of passages of Lorem Ipsum available, but the majority have suffered.",
-            "Contrary to popular belief.There are many variations of passages of Lorem Ipsum available, but the majority have suffered.",
-            "Contrary to popular belief.There are many variations of passages of Lorem Ipsum available, but the majority have suffered.",
-          ],
-          secondImgsrc: require("@/assets/img/article-photo1.png"),
-          secondImgAlt: "secondImg",
-          content4:
-            "Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpmaximus.posuere in.Contrary to popular belief.There are many variations of passages of Lorem Ipsum available, but the majority have suffered.",
-        },
-        {
-          category: "Kitchen",
-          firstImgsrc: require("@/assets/img/article-photo2.png"),
-          firstImgAlt: "firstImg",
-          title1: "Let’s Get Solution for Building Construction Work",
-          content1:
-            "Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpmaximus.posuere in.Contrary to popular belief.There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injecthumour, or randomised words which don't look even slightly believable.",
-          content2:
-            " Embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary.",
-          blockquote: "The details are not the details. They make the design.",
-          title2: "Design sprints are great",
-          content3:
-            "Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpmaximus.posuere in.Contrary to popular belief.There are many variations of passages of Lorem Ipsum available, but the majority have suffered.",
-          list: [
-            "Contrary to popular belief.There are many variations of passages of Lorem Ipsum available, but the majority have suffered.",
-            "Contrary to popular belief.There are many variations of passages of Lorem Ipsum available, but the majority have suffered.",
-            "Contrary to popular belief.There are many variations of passages of Lorem Ipsum available, but the majority have suffered.",
-          ],
-          secondImgsrc: require("@/assets/img/article-photo2.png"),
-          secondImgAlt: "secondImg",
-          content4:
-            "Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpmaximus.posuere in.Contrary to popular belief.There are many variations of passages of Lorem Ipsum available, but the majority have suffered.",
-        },
-        {
-          category: "Bedroom",
-          firstImgsrc: require("@/assets/img/card1.png"),
-          firstImgAlt: "firstImg",
-          title1: "Let’s Get Solution for Building Construction Work",
-          content1:
-            "Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpmaximus.posuere in.Contrary to popular belief.There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injecthumour, or randomised words which don't look even slightly believable.",
-          content2:
-            " Embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary.",
-          blockquote: "The details are not the details. They make the design.",
-          title2: "Design sprints are great",
-          content3:
-            "Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpmaximus.posuere in.Contrary to popular belief.There are many variations of passages of Lorem Ipsum available, but the majority have suffered.",
-          list: [
-            "Contrary to popular belief.There are many variations of passages of Lorem Ipsum available, but the majority have suffered.",
-            "Contrary to popular belief.There are many variations of passages of Lorem Ipsum available, but the majority have suffered.",
-            "Contrary to popular belief.There are many variations of passages of Lorem Ipsum available, but the majority have suffered.",
-          ],
-          secondImgsrc: require("@/assets/img/card1.png"),
-          secondImgAlt: "secondImg",
-          content4:
-            "Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpmaximus.posuere in.Contrary to popular belief.There are many variations of passages of Lorem Ipsum available, but the majority have suffered.",
-        },
-        {
-          category: "Building",
-          firstImgsrc: require("@/assets/img/card2.png"),
-          firstImgAlt: "firstImg",
-          title1: "Let’s Get Solution for Building Construction Work",
-          content1:
-            "Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpmaximus.posuere in.Contrary to popular belief.There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injecthumour, or randomised words which don't look even slightly believable.",
-          content2:
-            " Embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary.",
-          blockquote: "The details are not the details. They make the design.",
-          title2: "Design sprints are great",
-          content3:
-            "Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpmaximus.posuere in.Contrary to popular belief.There are many variations of passages of Lorem Ipsum available, but the majority have suffered.",
-          list: [
-            "Contrary to popular belief.There are many variations of passages of Lorem Ipsum available, but the majority have suffered.",
-            "Contrary to popular belief.There are many variations of passages of Lorem Ipsum available, but the majority have suffered.",
-            "Contrary to popular belief.There are many variations of passages of Lorem Ipsum available, but the majority have suffered.",
-          ],
-          secondImgsrc: require("@/assets/img/card2.png"),
-          secondImgAlt: "secondImg",
-          content4:
-            "Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpmaximus.posuere in.Contrary to popular belief.There are many variations of passages of Lorem Ipsum available, but the majority have suffered.",
-        },
-        {
-          category: "Architecture",
-          firstImgsrc: require("@/assets/img/card3.png"),
-          firstImgAlt: "firstImg",
-          title1: "Let’s Get Solution for Building Construction Work",
-          content1:
-            "Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpmaximus.posuere in.Contrary to popular belief.There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injecthumour, or randomised words which don't look even slightly believable.",
-          content2:
-            " Embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary.",
-          blockquote: "The details are not the details. They make the design.",
-          title2: "Design sprints are great",
-          content3:
-            "Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpmaximus.posuere in.Contrary to popular belief.There are many variations of passages of Lorem Ipsum available, but the majority have suffered.",
-          list: [
-            "Contrary to popular belief.There are many variations of passages of Lorem Ipsum available, but the majority have suffered.",
-            "Contrary to popular belief.There are many variations of passages of Lorem Ipsum available, but the majority have suffered.",
-            "Contrary to popular belief.There are many variations of passages of Lorem Ipsum available, but the majority have suffered.",
-          ],
-          secondImgsrc: require("@/assets/img/card3.png"),
-          secondImgAlt: "secondImg",
-          content4:
-            "Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpmaximus.posuere in.Contrary to popular belief.There are many variations of passages of Lorem Ipsum available, but the majority have suffered.",
-        },
-        {
-          category: "Kitchen Planning",
-          firstImgsrc: require("@/assets/img/card-img1.png"),
-          firstImgAlt: "firstImg",
-          title1: "Let’s Get Solution for Building Construction Work",
-          content1:
-            "Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpmaximus.posuere in.Contrary to popular belief.There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injecthumour, or randomised words which don't look even slightly believable.",
-          content2:
-            " Embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary.",
-          blockquote: "The details are not the details. They make the design.",
-          title2: "Design sprints are great",
-          content3:
-            "Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpmaximus.posuere in.Contrary to popular belief.There are many variations of passages of Lorem Ipsum available, but the majority have suffered.",
-          list: [
-            "Contrary to popular belief.There are many variations of passages of Lorem Ipsum available, but the majority have suffered.",
-            "Contrary to popular belief.There are many variations of passages of Lorem Ipsum available, but the majority have suffered.",
-            "Contrary to popular belief.There are many variations of passages of Lorem Ipsum available, but the majority have suffered.",
-          ],
-          secondImgsrc: require("@/assets/img/card-img1.png"),
-          secondImgAlt: "secondImg",
-          content4:
-            "Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpmaximus.posuere in.Contrary to popular belief.There are many variations of passages of Lorem Ipsum available, but the majority have suffered.",
-        },
-        {
-          category: "Bedroom",
-          firstImgsrc: require("@/assets/img/card-img2.png"),
-          firstImgAlt: "firstImg",
-          title1: "Let’s Get Solution for Building Construction Work",
-          content1:
-            "Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpmaximus.posuere in.Contrary to popular belief.There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injecthumour, or randomised words which don't look even slightly believable.",
-          content2:
-            " Embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary.",
-          blockquote: "The details are not the details. They make the design.",
-          title2: "Design sprints are great",
-          content3:
-            "Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpmaximus.posuere in.Contrary to popular belief.There are many variations of passages of Lorem Ipsum available, but the majority have suffered.",
-          list: [
-            "Contrary to popular belief.There are many variations of passages of Lorem Ipsum available, but the majority have suffered.",
-            "Contrary to popular belief.There are many variations of passages of Lorem Ipsum available, but the majority have suffered.",
-            "Contrary to popular belief.There are many variations of passages of Lorem Ipsum available, but the majority have suffered.",
-          ],
-          secondImgsrc: require("@/assets/img/card-img2.png"),
-          secondImgAlt: "secondImg",
-          content4:
-            "Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpmaximus.posuere in.Contrary to popular belief.There are many variations of passages of Lorem Ipsum available, but the majority have suffered.",
-        },
-      ],
     };
   },
-  methods: {
-    filtration(filter) {
-      this.activeFilter = filter;
-    },
-  },
   computed: {
+    ...mapState({
+      articles: (state) => state.detailArticles,
+    }),
     filterArticles() {
       return this.articles.filter(
         (article) => article.category === this.activeFilter
       );
     },
   },
+  methods: {
+    filtration(filter) {
+      this.activeFilter = filter;
+    },
+  },
 };
 </script>
 
 <style lang="scss" scoped>
-
 .flex {
   display: flex;
   justify-content: space-between;
@@ -424,5 +262,4 @@ export default {
     padding-bottom: 32px;
   }
 }
-
 </style>

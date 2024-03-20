@@ -1,12 +1,12 @@
 <template>
   <nav>
-    <a
+    <router-link
       v-for="(item, index) in items"
       :key="index"
       class="blog__text"
-      :href="item.link"
+      :to="item.link"
       ><TextComp class="blog__text-content">{{ item.content }}</TextComp>
-    </a>
+    </router-link>
   </nav>
 </template>
 

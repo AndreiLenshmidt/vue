@@ -1,8 +1,8 @@
 <template>
     <nav class="header__nav">
-      <a v-for="(navItem, index) in navItems" :key="index" :href="navItem.link">
+      <router-link v-for="(navItem, index) in navItems" :key="index" :to="navItem.link">
         <p class="header__item">{{ navItem.content }}</p>
-      </a>
+      </router-link>
     </nav>
 </template>
 
@@ -11,9 +11,9 @@ export default {
   data() {
     return {
       navItems: [
-        { content: "Home", link: "#" },
-        { content: "Project", link: "#" },
-        { content: "Blog", link: "#" },
+        { content: "Home", link: "/" },
+        { content: "Project", link: "/project" },
+        { content: "Blog", link: "/blog" },
       ],
     };
   },

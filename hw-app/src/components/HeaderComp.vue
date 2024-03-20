@@ -1,8 +1,8 @@
 <template>
   <header class="header">
-    <a :href="link">
+    <router-link to="/">
       <img :class="img.class" :src="img.src" :alt="img.alt" />
-    </a>
+    </router-link>
     <HeaderNav />
   </header>
 </template>

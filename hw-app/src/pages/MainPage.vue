@@ -72,6 +72,7 @@ import MainSection from "../components/MainSection.vue";
 import FirstCard from "../components/FirstCard.vue";
 import SecondCard from "../components/SecondCard.vue";
 import TextComp from "@/components/TextComp.vue";
+import { mapState } from "vuex";
 
 export default {
   components: {
@@ -88,85 +89,13 @@ export default {
         width: 8.03,
         class: "articles__btn",
       },
-      articles: [
-        {
-          id: 0,
-          imgsrc: require("@/assets/img/card-img1.png"),
-          title: "Let’s Get Solution For Building Construction Work",
-          category: "Kitchan Design",
-          link: "#",
-        },
-        {
-          id: 1,
-          imgsrc: require("@/assets/img/card-img2.png"),
-          title: "Low Cost Latest Invented Interior Designing <br> Ideas.",
-          category: "Interior Design",
-          link: "#",
-        },
-        {
-          id: 2,
-          imgsrc: require("@/assets/img/card-img3.png"),
-          title: "Best For Any Office & Business Interior Solution",
-          category: "Living Design",
-          link: "#",
-        },
-        {
-          id: 3,
-          imgsrc: require("@/assets/img/card-img4.png"),
-          title: "Let’s Get Solution For Building Construction Work",
-          category: "Kitchan Design",
-          link: "#",
-        },
-        {
-          id: 4,
-          imgsrc: require("@/assets/img/card-img5.png"),
-          title: "Low Cost Latest Invented Interior Designing <br>Ideas.",
-          category: "Interior Design",
-          link: "#",
-        },
-        {
-          id: 5,
-          imgsrc: require("@/assets/img/card-img6.png"),
-          title: "Best For Any Office & Business Interior Solution",
-          category: "Living Design",
-          link: "#",
-        },
-      ],
-      firstCards: [
-        {
-          imgsrc: require("@/assets/img/card1.png"),
-          link: "#",
-          imgalt: "Modern Kitchan",
-          title: "Modern Kitchan",
-          info: "Decor / Artchitecture",
-          class: "btrr",
-        },
-        {
-          imgsrc: require("@/assets/img/card2.png"),
-          link: "#",
-          imgalt: "Modern Kitchan",
-          title: "Modern Kitchan",
-          info: "Decor / Artchitecture",
-          class: "btlr",
-        },
-        {
-          imgsrc: require("@/assets/img/card3.png"),
-          link: "#",
-          imgalt: "Modern Kitchan",
-          title: "Modern Kitchan",
-          info: "Decor / Artchitecture",
-          class: "bbrr",
-        },
-        {
-          imgsrc: require("@/assets/img/card4.png"),
-          link: "#",
-          imgalt: "Modern Kitchan",
-          title: "Modern Kitchan",
-          info: "Decor / Artchitecture",
-          class: "bblr",
-        },
-      ],
     };
+  },
+  computed: {
+    ...mapState({
+      articles: (state) => state.articles.slice(0, 3),
+      firstCards: (state) => state.projectCards.slice(0, 4),
+    }),
   },
 };
 </script>
@@ -197,15 +126,11 @@ export default {
   &__card:nth-child(4) {
     padding-top: 56px;
   }
-  &__card-figure {
-    height: 525px;
-  }
-  &__card-img {
-    position: absolute;
-    top: -50%;
-    left: -15%;
-  }
 }
+.projects__card-figure {
+  height: 525px;
+}
+
 .proginfo-wrap {
   background: rgb(244, 240, 236);
   padding-top: 151px;
